@@ -143,6 +143,11 @@
     if (_selectedTabIndex != NSIntegerMax) {
       self.selectedTabView.selected = NO;
     }
+      
+      
+    if ([_delegate respondsToSelector:@selector(tabBar:tabWillSelect:tabOrig:)]) {
+      [_delegate tabBar:self tabWillSelect:selectedTabIndex tabOrig:_selectedTabIndex];
+    }
 
     _selectedTabIndex = selectedTabIndex;
 

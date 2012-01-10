@@ -22,4 +22,7 @@
 
 - (void)tabBar:(TTTabBar*)tabBar tabSelected:(NSInteger)selectedIndex;
 
+@optional
+- (void)tabBar:(TTTabBar*)tabBar tabWillSelect:(NSInteger)selectedIndex tabOrig:(NSInteger)origIndex;
+
 @end
