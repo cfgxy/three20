@@ -247,11 +247,13 @@ static TTURLRequestQueue* gMainQueue = nil;
         request.timestamp = timestamp ? timestamp : [NSDate date];
         request.respondedFromCache = YES;
 
-        for (id<TTURLRequestDelegate> delegate in request.delegates) {
+        NSArray* delegates = [request.delegates retain];
+        for (id<TTURLRequestDelegate> delegate in delegates) {
           if ([delegate respondsToSelector:@selector(requestDidFinishLoad:)]) {
             [delegate requestDidFinishLoad:request];
           }
         }
+        [delegates release];
       }
 
       return YES;
