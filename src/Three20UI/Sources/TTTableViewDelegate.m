@@ -164,17 +164,20 @@ static const NSUInteger kFirstTableSection = 0;
 
     } else if ([object isKindOfClass:[TTTableMoreButton class]]) {
       TTTableMoreButton* moreLink = (TTTableMoreButton*)object;
+      BOOL shouldLoad = !moreLink.isLoading;
       moreLink.isLoading = YES;
       TTTableMoreButtonCell* cell
         = (TTTableMoreButtonCell*)[tableView cellForRowAtIndexPath:indexPath];
       cell.animating = YES;
       [tableView deselectRowAtIndexPath:indexPath animated:YES];
 
-      if (moreLink.model) {
-        [moreLink.model load:TTURLRequestCachePolicyDefault more:YES];
+      if (shouldLoad) {
+        if (moreLink.model) {
+          [moreLink.model load:TTURLRequestCachePolicyDefault more:YES];
 
-      } else {
-        [_controller.model load:TTURLRequestCachePolicyDefault more:YES];
+        } else {
+          [_controller.model load:TTURLRequestCachePolicyDefault more:YES];
+        }
       }
     }
   }
