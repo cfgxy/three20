@@ -36,6 +36,12 @@ NSLocale* TTCurrentLocale() {
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 NSString* TTLocalizedString(NSString* key, NSString* comment) {
   static NSBundle* bundle = nil;
+
+  NSString* valueInMainBundle = [[NSBundle mainBundle] localizedStringForKey:key value:@"__{#NOT_A_VALUE#}__" table:nil];
+  if (![valueInMainBundle isEqualToString:@"__{#NOT_A_VALUE#}__"]) {
+    return valueInMainBundle;
+  }
+
   if (nil == bundle) {
     NSString* path = [[[NSBundle mainBundle] resourcePath]
           stringByAppendingPathComponent:@"Three20.bundle"];
