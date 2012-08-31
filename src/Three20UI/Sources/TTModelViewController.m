@@ -174,11 +174,11 @@
   if (showEmpty) {
     [self showEmpty:YES];
   }
-  if (showError) {
-    [self showError:YES];
-  }
   if (showLoading) {
     [self showLoading:YES];
+  }
+  if (showError) {
+    [self showError:YES];
   }
 }
 
