@@ -19,6 +19,7 @@
 
 @protocol TTTableViewDataSource;
 @class TTActivityLabel;
+@class LSThemeService;
 
 @interface TTTableViewController : TTModelViewController {
   UITableView*  _tableView;

@@ -47,6 +47,7 @@ static CGFloat kProgressMargin  = 6.0f;
 @synthesize style             = _style;
 @synthesize progress          = _progress;
 @synthesize smoothesProgress  = _smoothesProgress;
+@synthesize label             = _label;
 
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
