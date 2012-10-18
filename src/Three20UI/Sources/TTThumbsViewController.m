@@ -67,6 +67,15 @@ static CGFloat kThumbnailRowHeight = 79.0f;
   return self;
 }
 
+- (void) applyTheme {
+    [[LSThemeService lsSharedInstance] setThemeForTableView:self.tableView];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [self applyTheme];
+}
+
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 - (id)initWithDelegate:(id<TTThumbsViewControllerDelegate>)delegate {

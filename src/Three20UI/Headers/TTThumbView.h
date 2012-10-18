@@ -17,6 +17,8 @@
 // UI
 #import "Three20UI/TTButton.h"
 
+@class LSThemeService;
+
 @interface TTThumbView : TTButton
 
 @property (nonatomic, copy) NSString* thumbURL;

@@ -32,7 +32,8 @@
   	self = [super initWithFrame:frame];
 		if (self) {
 
-    self.backgroundColor = TTSTYLEVAR(thumbnailBackgroundColor);
+    //self.backgroundColor = TTSTYLEVAR(thumbnailBackgroundColor);
+    self.backgroundColor = [[LSThemeService lsSharedInstance] colorWithSelector:@"thumbnailBackgroundColor"];
     self.clipsToBounds = YES;
 
     [self setStylesWithSelector:@"thumbView:"];

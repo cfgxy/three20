@@ -22,8 +22,10 @@
 @protocol TTPhotoSource;
 @protocol TTTableViewDataSource;
 @class TTPhotoViewController;
+@protocol ThemeCallback;
+@class LSThemeService;
 
-@interface TTThumbsViewController : TTTableViewController <TTThumbsTableViewCellDelegate> {
+@interface TTThumbsViewController : TTTableViewController <TTThumbsTableViewCellDelegate, ThemeCallback> {
   id<TTPhotoSource>                   _photoSource;
   id<TTThumbsViewControllerDelegate>  _delegate;
 }
