@@ -24,6 +24,9 @@ extern const CGFloat    kTableCellHPadding;
 extern const CGFloat    kTableCellVPadding;
 extern const NSInteger  kTableMessageTextLineCount;
 
+@class LSThemeService;
+@class LSUIService;
+
 /**
  * The base class for table cells which are single-object based.
  *

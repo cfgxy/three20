@@ -18,6 +18,7 @@
 #import "Three20UI/TTTableViewCell.h"
 
 @class TTTableLinkedItem;
+@class LSThemeService;
 
 @interface TTTableLinkedItemCell : TTTableViewCell {
   TTTableLinkedItem* _item;

@@ -16,8 +16,10 @@
 
 // UI
 #import "Three20UI/TTTabBar.h"
+@class LSThemeService;
+@protocol ThemeCallback;
 
-@interface TTTabStrip : TTTabBar <UIScrollViewDelegate> {
+@interface TTTabStrip : TTTabBar <UIScrollViewDelegate, ThemeCallback> {
 @private
   TTView*       _overflowLeft;
   TTView*       _overflowRight;

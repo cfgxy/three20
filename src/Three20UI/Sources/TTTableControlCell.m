@@ -193,6 +193,7 @@ static const CGFloat kControlPadding = 8.0f;
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 - (void)setObject:(id)object {
+  [super setObject:object];
   if (object != _control && object != _item) {
     if (_control.superview == self.contentView) {
       //on cell reuse it is possible that another

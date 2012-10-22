@@ -127,6 +127,8 @@
     TTTableSubtextItem* item = object;
     self.textLabel.text = item.caption;
     self.detailTextLabel.text = item.text;
+    self.textLabel.textColor = [[LSThemeService lsSharedInstance] colorWithSelector:@"detailTextColor"];
+    self.detailTextLabel.textColor = [[LSThemeService lsSharedInstance] colorWithSelector:@"textColor"];
   }
 }
 

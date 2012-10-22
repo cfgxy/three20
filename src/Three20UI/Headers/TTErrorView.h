@@ -16,8 +16,10 @@
 
 // UI
 #import "Three20UI/TTButton.h"
+@class LSThemeService;
+@protocol ThemeCallback;
 
-@interface TTErrorView : UIView {
+@interface TTErrorView : UIView<ThemeCallback> {
   UIImageView*  _imageView;
   UILabel*      _titleView;
   UILabel*      _subtitleView;

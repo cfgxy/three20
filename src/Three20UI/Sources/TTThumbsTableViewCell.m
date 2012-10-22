@@ -136,6 +136,7 @@ static const CGFloat kDefaultThumbSize = 75.0f;
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 - (void)setObject:(id)object {
+  [super setObject:object];
   [self setPhoto:object];
 }
 

@@ -50,6 +50,8 @@
     TTTableSettingsItem* item = object;
     self.textLabel.text = item.caption;
     self.detailTextLabel.text = item.text;
+    self.captionLabel.textColor = [[LSThemeService lsSharedInstance] colorWithSelector:@"textColor"];
+    self.captionLabel.highlightedTextColor = [[LSThemeService lsSharedInstance] colorWithSelector:@"textColor"];
   }
 }
 

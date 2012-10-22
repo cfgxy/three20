@@ -83,6 +83,7 @@
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 - (void)setObject:(id)object {
+  [super setObject:object];
   if (_item != object) {
     [_item release];
     _item = [object retain];

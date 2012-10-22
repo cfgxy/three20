@@ -63,6 +63,12 @@ const NSInteger kTableMessageTextLineCount = 2;
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 - (void)setObject:(id)object {
+  self.textLabel.textColor = [[LSThemeService lsSharedInstance] colorWithSelector:@"textColor"];
+  self.textLabel.highlightedTextColor = [[LSThemeService lsSharedInstance] colorWithSelector:@"highlightedTextColor"];
+  self.detailTextLabel.textColor = [[LSThemeService lsSharedInstance] colorWithSelector:@"detailTextColor"];
+  self.detailTextLabel.highlightedTextColor = [[LSThemeService lsSharedInstance] colorWithSelector:@"highlightedTextColor"];
+
+  self.backgroundColor = [[LSThemeService lsSharedInstance] colorWithSelector:@"lsTableCellBackgroundColor"];
 }
 
 

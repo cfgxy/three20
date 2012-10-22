@@ -470,7 +470,6 @@
            autorelease];
         label.text = title;
         label.backgroundColor = _tableView.backgroundColor;
-        [[LSThemeService lsSharedInstance] setThemeForActivityLabel:label];
         self.loadingView = label;
       }
     }

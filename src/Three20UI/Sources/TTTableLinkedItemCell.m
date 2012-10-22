@@ -59,6 +59,7 @@
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 - (void)setObject:(id)object {
+  [super setObject:object];
   if (_item != object) {
     [_item release];
     _item = [object retain];
@@ -73,8 +74,7 @@
 
       } else if (navigationMode == TTNavigationModeCreate ||
                  navigationMode == TTNavigationModeShare) {
-        self.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-
+        self.accessoryView = [[LSThemeService lsSharedInstance] tableCellAccessoryView];
       } else {
         self.accessoryType = UITableViewCellAccessoryNone;
       }
@@ -82,7 +82,7 @@
       self.selectionStyle = TTSTYLEVAR(tableSelectionStyle);
 
     } else if (nil != item.delegate && nil != item.selector) {
-      self.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+      self.accessoryView = [[LSThemeService lsSharedInstance] tableCellAccessoryView];
       self.selectionStyle = TTSTYLEVAR(tableSelectionStyle);
 
     } else {

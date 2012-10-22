@@ -50,12 +50,18 @@
     _scrollView.delegate = self;
     [self addSubview:_scrollView];
 
-    self.style = TTSTYLE(tabStrip);
+    self.style = [[LSThemeService lsSharedInstance] styleWithSelector:@"tabStrip"];
     self.tabStyle = @"tabRound:";
     self.autoresizingMask = UIViewAutoresizingFlexibleWidth;
   }
 
   return self;
+}
+
+- (void) applyTheme {
+    self.style = [[LSThemeService lsSharedInstance] styleWithSelector:@"tabStrip"];
+    if (_overflowRight) _overflowRight.style = [[LSThemeService lsSharedInstance] styleWithSelector:@"tabOverflowRight"];
+    if (_overflowLeft) _overflowLeft.style = [[LSThemeService lsSharedInstance] styleWithSelector:@"tabOverflowLeft"];
 }
 
 
@@ -87,7 +93,7 @@
   if (_scrollView.contentOffset.x < (_scrollView.contentSize.width-self.width)) {
     if (!_overflowRight) {
       _overflowRight = [[TTView alloc] init];
-      _overflowRight.style = TTSTYLE(tabOverflowRight);
+      _overflowRight.style = [[LSThemeService lsSharedInstance] styleWithSelector:@"tabOverflowRight"];
       _overflowRight.userInteractionEnabled = NO;
       _overflowRight.backgroundColor = [UIColor clearColor];
       [_overflowRight sizeToFit];
@@ -103,7 +109,7 @@
   if (_scrollView.contentOffset.x > 0) {
     if (!_overflowLeft) {
       _overflowLeft = [[TTView alloc] init];
-      _overflowLeft.style = TTSTYLE(tabOverflowLeft);
+      _overflowLeft.style = [[LSThemeService lsSharedInstance] styleWithSelector:@"tabOverflowLeft"];
       _overflowLeft.userInteractionEnabled = NO;
       _overflowLeft.backgroundColor = [UIColor clearColor];
       [_overflowLeft sizeToFit];

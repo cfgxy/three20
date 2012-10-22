@@ -94,6 +94,7 @@
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 - (void)setObject:(id)object {
+  [super setObject:object];
   if (object != _view && object != _item) {
     [_view removeFromSuperview];
     TT_RELEASE_SAFELY(_view);

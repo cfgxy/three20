@@ -42,7 +42,7 @@ static const CGFloat kHPadding  = 10.0f;
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 - (void)addReloadButton {
-  _reloadButton = [[TTButton buttonWithStyle:@"tableReloadButton:"] retain];
+  _reloadButton = [[TTButton buttonWithStyle:[[LSThemeService lsSharedInstance]nameWithTheme:@"tableReloadButton:"]] retain];
   [_reloadButton setImage:@"bundle://Three20.bundle/images/reloadButton.png"
                  forState:UIControlStateNormal];
   [_reloadButton sizeToFit];
@@ -51,6 +51,10 @@ static const CGFloat kHPadding  = 10.0f;
   [self layoutSubviews];
 }
 
+- (void) applyTheme {
+  self.backgroundColor = [[LSThemeService lsSharedInstance] colorWithSelector:@"lsBackgroundColor"];
+  if (nil != _reloadButton) [_reloadButton setStylesWithSelector:[[LSThemeService lsSharedInstance]nameWithTheme:@"tableReloadButton:"]];
+}
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 - (id)initWithTitle:(NSString*)title subtitle:(NSString*)subtitle image:(UIImage*)image {
