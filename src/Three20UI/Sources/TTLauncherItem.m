@@ -28,6 +28,7 @@
 @synthesize launcher    = _launcher;
 @synthesize title       = _title;
 @synthesize image       = _image;
+@synthesize imageHighlighted       = _imageHighlighted;
 @synthesize URL         = _URL;
 @synthesize style       = _style;
 @synthesize badgeValue  = _badgeValue;
@@ -75,6 +76,7 @@
   TT_RELEASE_SAFELY(_URL);
   TT_RELEASE_SAFELY(_style);
   TT_RELEASE_SAFELY(_userInfo);
+  TT_RELEASE_SAFELY(_imageHighlighted);
 
   [super dealloc];
 }
@@ -92,6 +94,7 @@
   if (self) {
     self.title = [decoder decodeObjectForKey:@"title"];
     self.image = [decoder decodeObjectForKey:@"image"];
+    self.imageHighlighted = [decoder decodeObjectForKey:@"imageHighlighted"];
     self.URL = [decoder decodeObjectForKey:@"URL"];
     self.style = [decoder decodeObjectForKey:@"style"];
     self.canDelete = [decoder decodeBoolForKey:@"canDelete"];
@@ -105,6 +108,7 @@
 - (void)encodeWithCoder:(NSCoder*)encoder {
   [encoder encodeObject:_title forKey:@"title"];
   [encoder encodeObject:_image forKey:@"image"];
+  [encoder encodeObject:_imageHighlighted forKey:@"imageHighlighted"];
   [encoder encodeObject:_URL forKey:@"URL"];
   [encoder encodeObject:_style forKey:@"style"];
   [encoder encodeBool:_canDelete forKey:@"canDelete"];

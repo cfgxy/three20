@@ -24,6 +24,7 @@
 
   NSString*       _title;
   NSString*       _image;
+  NSString*       _imageHighlighted;
   NSString*       _URL;
 
   NSString*       _style;
@@ -36,6 +37,7 @@
 @property (nonatomic, assign) TTLauncherView* launcher;
 @property (nonatomic, copy)   NSString*       title;
 @property (nonatomic, copy)   NSString*       image;
+@property (nonatomic, copy)   NSString*       imageHighlighted;
 @property (nonatomic, copy)   NSString*       URL;
 @property (nonatomic, copy)   NSString*       style;
 @property (nonatomic)         NSInteger       badgeNumber;
